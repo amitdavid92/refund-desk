@@ -2,7 +2,9 @@
 
 Run: refund-desk serve   (http://localhost:8000)
 """
+import csv
 import json
+import re
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -160,11 +162,26 @@ def version_summary(p):
     return {k: p[k] for k in ("version", "title", "author", "created_at", "changes")}
 
 
+def load_notes(path):
+    """The manager's policy notes, as written, by number. Rules cite them as "(policy note N)"."""
+    if not Path(path).exists():
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {int(row[0]): row[1] for row in csv.reader(f) if row and row[0].isdigit()}
+
+
+def cited_note(why, notes):
+    m = re.search(r"policy note (\d+)", why or "")
+    return {"number": int(m.group(1)), "text": notes[int(m.group(1))]} if m and int(m.group(1)) in notes else None
+
+
 def create_app(requests_path=ROOT / "data" / "pending.csv", policy_dir=ROOT / "policy",
                cache_path=ROOT / "cache" / "facts.json", decisions_path=ROOT / "state" / "decisions.jsonl",
                history_path=ROOT / "data" / "history.csv",
                translations_path=ROOT / "cache" / "translations.json",
+               notes_path=ROOT / "data" / "policy_notes.csv",
                ask="auto", translate_ask="auto"):
+    notes = load_notes(notes_path)
     ask = gemini_client() if ask == "auto" else ask
     desk = Desk(requests_path, policy_dir, cache_path, decisions_path, ask)
     translator = Translator(translations_path, gemini_translator() if translate_ask == "auto" else translate_ask)
@@ -185,7 +202,7 @@ def create_app(requests_path=ROOT / "data" / "pending.csv", policy_dir=ROOT / "p
     @app.get("/api/policy")
     def policy():
         return {"live": desk.policy, "versions": [version_summary(p) for p in versions(policy_dir)],
-                "examples": EXAMPLES}
+                "examples": EXAMPLES, "notes": [{"number": n, "text": t} for n, t in sorted(notes.items())]}
 
     @app.post("/api/policy/translate")
     def translate(body: Change):
@@ -232,7 +249,7 @@ def create_app(requests_path=ROOT / "data" / "pending.csv", policy_dir=ROOT / "p
     @app.get("/api/case/{key}")
     def case(key: str):
         r, d = desk.find(key)
-        return detail(key, r, d, desk.decided)
+        return {**detail(key, r, d, desk.decided), "policy_note": cited_note(d["why"], notes)}
 
     @app.post("/api/case/{key}/decision")
     def decide(key: str, decision: Decision):

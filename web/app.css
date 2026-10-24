@@ -160,6 +160,8 @@ h1.t { font-family: var(--serif); font-weight: 400; font-size: 30px; letter-spac
 .sec { margin-top: 16px; }
 .whycard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 18px 22px; }
 .whycard p.s { font-size: 18px; line-height: 1.4; font-family: var(--serif); margin-top: 4px; }
+.pnote { margin-top: 8px; font-size: 13.5px; color: var(--ink-muted); background: var(--surface-sunk); border-radius: var(--radius-md); padding: 8px 12px; }
+.pnote b { color: var(--accent); font-weight: 600; margin-right: 4px; }
 .note { margin-top: 12px; }
 .note h3 { font-size: 12.5px; font-weight: 500; color: var(--ink-muted); margin-bottom: 4px; }
 .note blockquote { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.6; }

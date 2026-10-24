@@ -82,3 +82,10 @@ def test_overview_weeks_from_history(client):
     assert w["week"] == "2026-06-01" and w["auto"] + w["people"] > 0
     # Lost money counts the $25 chargeback fee (policy note 7).
     assert any(x["lost_on_auto"] > 0 for x in o["weeks"])
+
+
+def test_case_shows_the_policy_note_it_cites(client):
+    c = client.get("/api/case/RF-1067").json()
+    assert "policy note 4" in c["why"]
+    assert c["policy_note"]["number"] == 4 and c["policy_note"]["text"].startswith("Never arrived")
+    assert len(client.get("/api/policy").json()["notes"]) == 7

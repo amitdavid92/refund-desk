@@ -233,7 +233,7 @@ async function renderOverview() {
           <b>${last.lost_on_auto ? "Roll back" : "Keep the line"}</b>
           <small>${ROLLBACK} ${tripped.length ? `Hit ${tripped.length === 1 ? "once" : `${tripped.length} times`} in history: ${tripped.map(w => `week of ${shortDate(w.week)}, ${money(w.lost_on_auto, 0)}`).join("; ")} (the old rule).` : ""}</small></div>
       </div>
-      <p class="src">Each number is the week of ${shortDate(last.week)} against the week before. Lost: a chargeback or an overturned appeal, plus the $25 chargeback fee.</p>
+      <p class="src">These come from decided history, because losses show up weeks after a decision. Each number is the week of ${shortDate(last.week)} against the week before. Lost: a chargeback or an overturned appeal, plus the $25 fee. Today’s decisions are on the <a href="#/queue">Queue</a>.</p>
       <div class="board">
         <section class="panel s-8"><div class="lab">Requests per week by route
             ${legend([{ c: "auto", label: "Auto-approved", v: o.totals.auto }, { c: "people", label: "Decided by people", v: o.totals.people }])}</div>
@@ -345,6 +345,7 @@ async function renderCase(key) {
           <section class="sec"><div class="whycard">
             <div class="rule">Why this is ${c.route === "reviewer" ? "with you" : ROUTE_LABEL[c.route].toLowerCase()} · ${esc(c.rule_name)}</div>
             <p class="s">${esc(c.why)}</p>
+            ${c.policy_note ? `<p class="pnote"><b>Policy note ${c.policy_note.number}</b> “${esc(c.policy_note.text)}”</p>` : ""}
             ${siblings.length > 1 ? submissions(siblings, c.key) : ""}
             ${noteBlock("What the customer wrote", c.customer_note, c.quotes, false)}
             ${noteBlock("What support noted", c.support_note, c.quotes, true)}
@@ -401,7 +402,7 @@ function timelineBlock(c, now) {
   return `<div class="tl">
     <div class="stop"><span class="dot"></span><b>Delivered</b><span class="muted num">${delivered ? shortDate(delivered) : "Unknown"}</span></div>
     <div class="stop"><span class="dot"></span><b>Refund asked</b><span class="muted num">${shortDate(c.requested_at)}${ds != null && ds >= 0 ? ` · +${ds} days` : ""}</span></div>
-    <div class="stop"><span class="dot now"></span><b>${c.decided ? "Decided" : "Today"}</b><span class="muted num">${shortDate(now)} · ${wait} day${wait === 1 ? "" : "s"} waiting</span></div></div>`;
+    <div class="stop"><span class="dot now"></span><b>${c.decided ? "Decided" : "Today"}</b><span class="muted num">${shortDate(now)} · ${c.decided ? "after " : ""}${wait} day${wait === 1 ? "" : "s"}${c.decided ? "" : " waiting"}</span></div></div>`;
 }
 
 function tilesBlock(c) {
@@ -532,6 +533,9 @@ async function renderPolicy(message) {
             ${v.version !== live.version ? `<button type="button" class="btn" data-rollback="${v.version}">Roll back to v${v.version}</button>` : ""}
           </li>`).join("")}</ul>
         <p class="err" id="rb-err" hidden></p>
+        <details><summary>Policy notes · the manager’s own words, which the rules cite</summary>
+          <ol class="rules">${p.notes.map(n => `<li value="${n.number}">“${esc(n.text)}”</li>`).join("")}</ol>
+        </details>
         <details><summary>Live rules · v${live.version}, checked top to bottom</summary>
           <ol class="rules">${live.rules.map(r => `<li><b>${esc(r.name)}</b>${r.locked ? ` <span class="pill">Safety check · locked</span>` : ""}<div>${ruleSentence(r)}</div></li>`).join("")}
             <li><b>${esc(live.fallback.name)}</b><div>Anything else: <span class="tok">send to a reviewer</span>.</div></li></ol>
