@@ -4,7 +4,9 @@ Refund requests for an online store, routed by fixed rules. An LLM reads the fre
 
 There are two mechanisms. The **reviewer** works a queue. The **Refund Operations Manager** changes a rule in plain words and sees what it would do before it goes live.
 
-- **Screen recording (5 min, narrated in Hebrew):** https://www.loom.com/share/55c201c5ec764428854e25d6fbdb78df
+![Demo: the reviewer's queue, case RF-1074 where a Spanish note reveals a refund already paid in store, and the manager's "stolen-card" rule whose third reading would have approved two past chargebacks](docs/demo.gif)
+
+- **Screen recording (5 min):** https://www.loom.com/share/55c201c5ec764428854e25d6fbdb78df
 - **Slides (8):** [docs/slides.pdf](docs/slides.pdf)
 
 ## Run it
@@ -32,10 +34,14 @@ Without a key, a request whose notes can't be read is never treated as clean. It
 uv run refund-desk route [FILE]     # route a CSV in the terminal
 uv run refund-desk evaluate         # the line, measured on history (train and holdout)
 uv run refund-desk eval-facts       # the LLM's reading vs hand labels, and cost per request
-uv run --extra dev pytest           # 56 tests
+uv run --extra dev pytest           # 57 tests
 ```
 
-To start the demo from a clean state, delete `state/` (reviewer decisions) and every `policy/v*.json` except `v1.json`.
+**Reset to a clean state.** This removes reviewer decisions (`state/`) and every published policy version except `v1.json`, then starts the app again. The server keeps decisions in memory, so it has to restart.
+
+```bash
+pkill -f "refund-desk serve"; rm -rf state; find policy -name 'v*.json' ! -name v1.json -delete; uv run refund-desk serve
+```
 
 ## What to click
 
