@@ -1,0 +1,78 @@
+{
+ "c1f1251c2e3e7fdc": {
+  "model": "gemini-3.6-flash",
+  "raw": [
+   {
+    "conditions": [
+     {
+      "field": "facts.card_reported_stolen",
+      "op": "eq",
+      "value": "true"
+     }
+    ],
+    "data_source": "the LLM notes extraction, not the payment provider's automatic check",
+    "default_action": "none",
+    "insert_before": "fraud-flag",
+    "name": "auto-approve-stolen-card",
+    "route": "auto_approve",
+    "summary": "Automatically approve refund requests where notes indicate the card was reported stolen.",
+    "why": "Approved automatically: card was reported stolen."
+   },
+   {
+    "conditions": [
+     {
+      "field": "facts.card_reported_stolen",
+      "op": "eq",
+      "value": "true"
+     }
+    ],
+    "data_source": "the LLM notes extraction, not the payment provider's automatic check",
+    "default_action": "none",
+    "insert_before": "fraud-flag",
+    "name": "fraud-team-stolen-card",
+    "route": "fraud_team",
+    "summary": "Send requests where notes indicate the card was reported stolen directly to the fraud team.",
+    "why": "Sent to the fraud team because the card was reported stolen."
+   },
+   {
+    "conditions": [
+     {
+      "field": "fraud_flag",
+      "op": "eq",
+      "value": "yes"
+     }
+    ],
+    "data_source": "the payment provider's automatic risk check, not the LLM notes extraction",
+    "default_action": "none",
+    "insert_before": "fraud-flag",
+    "name": "auto-approve-fraud-flag",
+    "route": "auto_approve",
+    "summary": "Automatically approve refund requests when the payment provider flags fraud.",
+    "why": "Approved automatically: payment provider fraud flag set."
+   }
+  ],
+  "text": "From now on, stolen-card cases go straight through."
+ },
+ "ceba19d50d8ba085": {
+  "model": "gemini-3.6-flash",
+  "raw": [
+   {
+    "conditions": [
+     {
+      "field": "amount_usd",
+      "op": "gt",
+      "value": "300"
+     }
+    ],
+    "data_source": "the requested refund amount in US dollars from the customer's request",
+    "default_action": "none",
+    "insert_before": "refund-elsewhere",
+    "name": "amount-over-300",
+    "route": "reviewer",
+    "summary": "Route any refund request over $300 to a human reviewer.",
+    "why": "Sent to you because the requested refund amount is over $300."
+   }
+  ],
+  "text": "From now on, anything over $300 comes to us."
+ }
+}

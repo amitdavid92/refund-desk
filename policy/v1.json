@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "title": "First version: the line from the history analysis (D9)",
+  "author": "Amit David",
+  "created_at": "2026-10-21T09:00:00Z",
+  "changes": [
+    "Auto-approve only proven-safe cases, by reason and amount.",
+    "Everything else goes to a reviewer, with the rule that sent it."
+  ],
+  "rules": [
+    {
+      "id": "data-problem",
+      "name": "Missing or impossible data",
+      "when": [{"field": "data_complete", "op": "eq", "value": false}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because some of the request data is missing or impossible, so no rule can trust it.",
+      "locked": true
+    },
+    {
+      "id": "duplicate",
+      "name": "One payment per order",
+      "when": [{"field": "duplicate", "op": "eq", "value": true}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because the same request was submitted more than once.",
+      "locked": true
+    },
+    {
+      "id": "text-unread",
+      "name": "Notes not read yet",
+      "when": [{"field": "facts_status", "op": "eq", "value": "unread"}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because the notes could not be read automatically, so nothing in them has been checked.",
+      "locked": true
+    },
+    {
+      "id": "authority-claim",
+      "name": "Claims of approval always go to a person",
+      "when": [{"field": "facts.authority_claim", "op": "eq", "value": true}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because the note claims the refund was already approved, or tells the system what to do.",
+      "locked": true
+    },
+    {
+      "id": "fraud-flag",
+      "name": "Fraud flag goes to the fraud team",
+      "when": [{"field": "fraud_flag", "op": "eq", "value": "yes"}],
+      "route": "fraud_team",
+      "default_action": null,
+      "why": "Sent to the fraud team because the payment provider flagged this order (policy note 5)."
+    },
+    {
+      "id": "refund-elsewhere",
+      "name": "Possible double refund",
+      "when": [{"field": "facts.refund_elsewhere", "op": "eq", "value": true}],
+      "route": "reviewer",
+      "default_action": "ask",
+      "why": "Sent to you because the customer says they were already refunded somewhere else."
+    },
+    {
+      "id": "claim-contradicted",
+      "name": "Reason must match the note",
+      "when": [{"field": "facts.claim_contradicted", "op": "eq", "value": true}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because the notes say something different from the reason the customer picked."
+    },
+    {
+      "id": "never-arrived-delivered",
+      "name": "Carrier has proof of delivery",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "never_arrived"},
+        {"field": "facts.delivery_evidence", "op": "eq", "value": true},
+        {"field": "facts.carrier_investigation", "op": "eq", "value": false}
+      ],
+      "route": "reviewer",
+      "default_action": "reject",
+      "why": "Sent to you because the carrier has proof of delivery and no investigation is open (policy note 4)."
+    },
+    {
+      "id": "never-arrived",
+      "name": "Never arrived needs delivery evidence",
+      "when": [{"field": "stated_reason", "op": "eq", "value": "never_arrived"}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because a missing parcel needs the carrier's delivery evidence checked (policy note 4)."
+    },
+    {
+      "id": "late-delivery",
+      "name": "Late delivery is the reviewer's call",
+      "when": [{"field": "stated_reason", "op": "eq", "value": "late_delivery"}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because a partial refund for late delivery is the reviewer's call (policy note 6)."
+    },
+    {
+      "id": "new-customer",
+      "name": "New customer",
+      "when": [{"field": "tenure_months", "op": "lt", "value": 9}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because the account is younger than 9 months."
+    },
+    {
+      "id": "prior-refunds",
+      "name": "Refunded in the last 12 months",
+      "when": [{"field": "prior_refunds_12m", "op": "gt", "value": 0}],
+      "route": "reviewer",
+      "default_action": null,
+      "why": "Sent to you because this customer already had a refund in the last 12 months."
+    },
+    {
+      "id": "changed-mind-late",
+      "name": "Change of mind after 14 days",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "changed_mind"},
+        {"field": "days_since_delivery", "op": "gt", "value": 14}
+      ],
+      "route": "reviewer",
+      "default_action": "reject",
+      "why": "Sent to you because change-of-mind returns are accepted only within 14 days (policy note 2)."
+    },
+    {
+      "id": "damaged-with-photo",
+      "name": "Damaged over $50, photo provided",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "arrived_damaged"},
+        {"field": "amount_usd", "op": "gt", "value": 50},
+        {"field": "facts.photo_provided", "op": "eq", "value": true}
+      ],
+      "route": "reviewer",
+      "default_action": "approve",
+      "why": "Sent to you because damage claims over $50 need a person to check the photo (policy note 3)."
+    },
+    {
+      "id": "damaged-needs-photo",
+      "name": "Damaged over $50 needs a photo",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "arrived_damaged"},
+        {"field": "amount_usd", "op": "gt", "value": 50}
+      ],
+      "route": "reviewer",
+      "default_action": "ask",
+      "why": "Sent to you because damage claims over $50 need a photo (policy note 3)."
+    },
+    {
+      "id": "auto-small-our-mistake",
+      "name": "Wrong size or wrong item up to $100",
+      "when": [
+        {"field": "stated_reason", "op": "in", "value": ["wrong_size", "wrong_item"]},
+        {"field": "amount_usd", "op": "le", "value": 100}
+      ],
+      "route": "auto_approve",
+      "default_action": "approve",
+      "why": "Approved automatically: wrong size or wrong item, up to $100, from an established customer."
+    },
+    {
+      "id": "auto-changed-mind",
+      "name": "Change of mind within 14 days up to $100",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "changed_mind"},
+        {"field": "amount_usd", "op": "le", "value": 100}
+      ],
+      "route": "auto_approve",
+      "default_action": "approve",
+      "why": "Approved automatically: change of mind within 14 days, up to $100, from an established customer."
+    },
+    {
+      "id": "auto-damaged-small",
+      "name": "Damaged up to $50",
+      "when": [
+        {"field": "stated_reason", "op": "eq", "value": "arrived_damaged"},
+        {"field": "amount_usd", "op": "le", "value": 50}
+      ],
+      "route": "auto_approve",
+      "default_action": "approve",
+      "why": "Approved automatically: damaged on arrival, up to $50, from an established customer."
+    }
+  ],
+  "fallback": {
+    "id": "no-rule",
+    "name": "Above the automatic limit",
+    "route": "reviewer",
+    "default_action": null,
+    "why": "Sent to you because the amount is above what the rules approve automatically."
+  }
+}

@@ -1,0 +1,20 @@
+column,description
+request_id,"Unique ID per refund request. RF-1xxx = web form, RF-2xxx = support desk."
+requested_at,Date the customer submitted the request (YYYY-MM-DD).
+customer_id,Customer account ID.
+tenure_months,Months since the customer's account was created.
+prior_refunds_12m,Number of refunds granted to this customer in the 12 months before this request.
+amount_usd,Requested refund amount in US dollars (number).
+category,"Product category: apparel, home, electronics."
+payment_method,card or paypal.
+stated_reason,"Reason the customer selected: wrong_size, changed_mind, arrived_damaged, wrong_item, never_arrived, late_delivery."
+customer_note,Free text written by the customer. Optional.
+support_note,Free text written by the support agent who handled the ticket. Optional.
+days_since_delivery,Days between delivery (per carrier) and the request.
+fraud_flag,yes / no. Set by the payment provider's risk check.
+decision,"approved, rejected, partial, or pending."
+decided_by,"'auto' for the existing auto-approve rule, otherwise the reviewer's name."
+outcome_note,"Anything that happened after the decision (partial amount, appeal, chargeback)."
+decided_at,When the decision was recorded (YYYY-MM-DD HH:MM).
+review_minutes,Minutes the reviewer spent on the request (blank for auto).
+(all),This is what the columns should contain. The data doesn't always comply.

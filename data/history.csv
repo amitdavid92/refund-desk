@@ -1,0 +1,252 @@
+request_id,requested_at,customer_id,tenure_months,prior_refunds_12m,amount_usd,category,payment_method,stated_reason,customer_note,support_note,days_since_delivery,fraud_flag,decision,decided_by,outcome_note,decided_at,review_minutes
+RF-2003,2026-06-02,CU-1789,48,0,10,home,card,arrived_damaged,,photo attached looks genuine,3,no,approved,auto,,2026-06-02 11:31,
+RF-2004,2026-06-02,CU-2636,59,0,31,home,card,changed_mind,bought two by mistake,,10,no,approved,auto,,2026-06-02 14:38,
+RF-1001,2026-06-02,CU-1003,14,0,24,apparel,card,wrong_size,ordered medium got small,,4,no,approved,auto,,2026-06-02 17:29,
+RF-2002,2026-06-02,CU-2438,28,0,19,home,paypal,arrived_damaged,mug chipped on the rim,photos clear,4,no,approved,auto,,2026-06-02 20:03,
+RF-2005,2026-06-03,CU-2178,7,0, 42 ,home,card,changed_mind,,,10,no,approved,J. Alvarez,,2026-06-03 13:48,2
+RF-2008,2026-06-03,CU-2294,17,0,25.28,apparel,card,arrived_damaged,,photo attached looks genuine,3,no,approved,auto,,2026-06-03 16:29,
+RF-1003,2026-06-03,CU-1109,31,0,18.5,apparel,card,changed_mind,,within window,6,no,approved,auto,,2026-06-03 17:39,
+RF-1004,2026-06-04,CU-1217,3,0,72,electronics,card,arrived_damaged,screen has a line,No photo - customer says she already threw the box and the unit away.,3,no,approved,D. Patel,,2026-06-04 12:53,1.5
+RF-2007,2026-06-03,CU-2018,1,0,305,electronics,card,never_arrived,,Unauthorised purchase per cardholder - bank fraud case opened.,4,yes,approved,S. Kwan,fraud team confirmed,2026-06-04 15:24,18
+RF-1002,2026-06-02,CU-1044,9,0,45,home,card,arrived_damaged,handle snapped off,photo attached looks genuine,2,no,approved,R. Mizrahi,,2026-06-04 16:06,3
+RF-2001,2026-06-01,CU-2500,27,1,46,apparel,card,arrived_damaged,hole in the sleeve,photos clear,1,false,approved,S. Kwan,,2026-06-04 17:24,4
+RF-2006,2026-06-03,CU-2398,14,0,209,Electronics,paypal,late_delivery,"needed it for a trip, came after",carrier delay confirmed,15,no,approved,R. Mizrahi,,2026-06-04 17:41,11
+RF-1005,2026-06-05,CU-1288,22,1,410,electronics,card,never_arrived,nothing delivered,Carrier POD shows it signed for at 11:02 by 'M. Katz'. Customer says nobody by that name lives there.,9,no,approved,S. Kwan,chargeback filed 2026-07-11,2026-06-05 12:46,3
+RF-2011,2026-06-05,CU-1803,56,0,32.5,apparel,card,arrived_damaged,mug chipped on the rim,photos clear,3,no,approved,auto,,2026-06-05 13:05,
+RF-2016,2026-06-06,CU-2363,13,0,53,home,card,changed mind,,within window,10,no,approved,auto,,2026-06-06 08:49,
+RF-2013,2026-06-05,CU-2459,6,0,18,apparel,card,arrived_damaged,hole in the sleeve,photos clear,5,no,approved,S. Kwan,,2026-06-06 09:48,2
+RF-2012,2026-06-05,CU-2704,16,0,39,apparel,card,changed_mind,"changed my mind, sorry",,18,no,approved,R. Mizrahi,,2026-06-06 13:55,4
+RF-2014,2026-06-06,CU-1762,3,0,46,apparel,paypal,changed_mind,colour looks different in person,,7,no,approved,D. Patel,,2026-06-06 16:24,3
+RF-1006,2026-06-06,CU-1051,7,0,32,home,paypal,wrong_item,sent blue not grey,matches order line - customer may be mistaken,5,no,rejected,D. Patel,,2026-06-07 12:38,2
+RF-2015,2026-06-06,CU-1917,23,0,286,home,paypal,never_arrived,still nothing after 2 weeks,"Tracking stops at the regional depot, carrier has opened a trace.",13,no,approved,J. Alvarez,,2026-06-07 14:44,22
+RF-2010,2026-06-05,CU-2756,4,0,12.54,apparel,card,wrong_size,ordered L got M,,8,no,approved,S. Kwan,,2026-06-07 15:33,3
+RF-2019,2026-06-08,CU-2748,1,0,610,electronics,card,never_arrived,,Card reported stolen. Order not recognised by the account holder.,3,Y,approved,J. Alvarez,fraud team confirmed,2026-06-08 09:57,9
+RF-2025,09/06/2026,CU-1738,28,0,37,apparel,card,wrong_size,,,7,no,approved,auto,,2026-06-09 09:07,
+RF-2020,2026-06-08,CU-2236,4,0,240,electronics,card,never_arrived,,"Delivered to parcel locker, customer collected it per locker log.",9,no,rejected,J. Alvarez,,2026-06-09 09:12,6
+RF-2024,2026-06-09,CU-2666,25,0,30,apparel,card,wrong_size,too tight across the shoulders,,8,no,approved,auto,,2026-06-09 10:06,
+RF-1008,2026-06-09,CU-1420,2,0,95,electronics,card,arrived_damaged,cracked corner,photos clear,3,no,rejected,S. Kwan,"outside policy per reviewer; customer appealed 2026-06-15 - overturned, refunded in full",2026-06-09 11:43,11
+RF-2018,2026-06-08,CU-2687,6,0,85,electronics,card,late_delivery,,carrier delay confirmed,20,no,partial,S. Kwan,shipping refunded only,2026-06-09 11:46,18
+RF-2017,2026-06-06,CU-1935,1,0,130,home,card,never_arrived,,new account - address mismatch,5,yes,rejected,S. Kwan,,2026-06-09 11:47,11
+RF-2009,2026-06-05,CU-2481,4,0,12,apparel,paypal,arrived_damaged,hole in the sleeve,photos clear,3,no,approved,S. Kwan,,2026-06-09 14:25,2
+RF-1007,2026-06-08,CU-1162,45,0,95,electronics,card,arrived_damaged,cracked on arrival,photos clear,3,no,approved,R. Mizrahi,,2026-06-09 16:31,9
+RF-2021,2026-06-09,CU-2549,42,0,27,electronics,card,arrived_damaged,lid cracked,,5,no,approved,auto,,2026-06-09 20:57,
+RF-2022,2026-06-09,CU-2510,9,0,57,home,card,arrived_damaged,,photos clear,5,no,approved,S. Kwan,,2026-06-10 10:00,3
+RF-1009,2026-06-10,CU-1077,18,0,14,apparel,card,changed_mind,,,8,no,approved,auto,,2026-06-10 10:37,
+RF-2028,2026-06-10,CU-1799,20,0,70,home,card,late_delivery,,carrier delay confirmed,20,no,partial,R. Mizrahi,shipping refunded only,2026-06-10 16:34,25
+RF-2027,2026-06-10,CU-1932,16,0,35,home,card,arrived_damaged,zip broken out of the bag,,6,false,approved,auto,,2026-06-10 18:07,
+RF-2023,2026-06-09,CU-1733,7,0,64,home,card,arrived_damaged,,,3,no,approved,R. Mizrahi,,2026-06-11 17:05,3
+RF-2030,2026-06-12,CU-2049,37,0,43,apparel,card,changed_mind,"gift, they didn't like it",,13,no,approved,auto,,2026-06-12 12:39,
+RF-2026,2026-06-10,CU-2982,14,0,225,electronics,card,never_arrived,,tracking inconclusive - last scan 10 days ago,10,no,approved,J. Alvarez,,2026-06-12 14:58,14
+RF-2029,2026-06-12,CU-2551,30,0,12,electronics,paypal,arrived_damaged,,photo attached looks genuine,5,no,approved,auto,,2026-06-12 15:12,
+RF-2033,2026-06-12,CU-2042,14,0,19.15,apparel,card,late_delivery,,carrier delay confirmed,20,no,approved,auto,,2026-06-12 20:55,
+RF-2034,2026-06-13,CU-2850,13,0,175,electronics,card,changed_mind,found it cheaper,outside 14 day window - opened and used,19,no,rejected,S. Kwan,,2026-06-13 09:28,22
+RF-2032,2026-06-12,CU-2939,8,0,49,apparel,paypal,changed_mind,,,14,no,approved,R. Mizrahi,,2026-06-13 12:00,2
+RF-1010,2026-06-11,CU-1044,9,1,68,electronics,card,late_delivery,arrived two weeks late,carrier delay confirmed,16,no,approved,D. Patel,,2026-06-13 15:26,2.5
+RF-2035,2026-06-13,CU-2183,19,0,31,apparel,card,wrong_size,too tight across the shoulders,,7,no,approved,auto,,2026-06-13 17:20,
+RF-2036,2026-06-13,CU-1978,38,0,178.63,electronics,paypal,arrived_damaged,screen won't turn on out of the box,"Photos clear - crack runs from the corner, box crushed on the same side.",6,no,approved,J. Alvarez,,2026-06-14 12:47,9
+RF-2037,2026-06-14,CU-2337,44,0,52,electronics,paypal,arrived_damaged,zip broken out of the bag,,5,no,approved,auto,,2026-06-14 15:09,
+RF-2038,2026-06-15T07:11:00Z,CU-1909,36,0,30,home,card,changed_mind,not really my style,,8,no,approved,auto,,2026-06-15 11:51,
+RF-1013,2026-06-15,CU-1134,27,0,41,apparel,card,arrived_damaged,seam torn,,5,no,approved,auto,,2026-06-15 11:58,
+RF-2031,12/06/2026,CU-2645,3,0,267,home,card,arrived_damaged,lamp base snapped,photo attached looks genuine,4,no,approved,R. Mizrahi,,2026-06-16 09:00,12
+RF-2040,2026-06-16,CU-2759,34,0,38.82,apparel,card,late_delivery,took 3 weeks,carrier delay confirmed,19,no,approved,auto,,2026-06-16 14:57,
+RF-2040,2026-06-16,CU-2759,34,0,38.82,apparel,card,late_delivery,took 3 weeks,carrier delay confirmed,19,no,approved,auto,,2026-06-16 14:57,
+RF-2039,2026-06-16,CU-2270,50,0,30,apparel,card,wrong_size,need a size up,,5,no,approved,auto,,2026-06-16 16:34,
+RF-1012,2026-06-13,CU-1217,3,1,73,home,card,wrong_item,not what I ordered,"Asked what was wrong with it - customer couldn't say, just repeated 'not what I ordered'.",4,no,approved,R. Mizrahi,,2026-06-16 16:57,3
+RF-1011,2026-06-12,CU-1301,11,0,220,home,card,never_arrived,,tracking stops at depot,12,no,approved,S. Kwan,,2026-06-16 17:30,22
+RF-1015,2026-06-17,CU-1088,38,0,27,home,paypal,changed_mind,,,11,no,approved,auto,,2026-06-17 19:26,
+RF-1014,2026-06-16,CU-1509,1,0,185,electronics,card,never_arrived,no package,"Brand-new account, shipping address doesn't match the billing address on the card.",7,yes,approved,S. Kwan,,2026-06-18 09:53,9
+RF-2043,2026-06-18,CU-2882,18,0,26,home,card,changed_mind,not really my style,,12,no,approved,auto,,2026-06-18 12:14,
+RF-2044,2026-06-19,CU-2777,60,0,54,Home,card,changed_mind,,within window,13,no,approved,auto,,2026-06-19 10:28,
+RF-1016,2026-06-18,CU-1245,16,0,160,home,card,never_arrived,never showed up,tracking inconclusive,10,no,approved,D. Patel,,2026-06-19 10:38,6
+RF-2047,2026-06-19,CU-1761,50,0,43,apparel,card,wrong_item,,,7,no,approved,auto,,2026-06-19 12:19,
+RF-2046,2026-06-19,CU-2603,32,0,53,home,card,arrived_damaged,zip broken out of the bag,,1,no,approved,auto,,2026-06-19 12:44,
+RF-2045,2026-06-19,CU-1888,56,0,33,home,card,late_delivery,took 3 weeks,carrier delay confirmed,24,no,approved,auto,,2026-06-19 15:32,
+RF-2041,2026-06-17,CU-2837,22,0,59,home,card,wrong_item,,confirmed picking error,6,no,approved,S. Kwan,,2026-06-20 12:10,4
+RF-2048,2026-06-20,CU-2668,,0,23,home,card,never_arrived,,tracking stops at depot,9,no,approved,auto,,2026-06-20 14:34,
+RF-2042,2026-06-18,CU-1754,20,0,265,electronics,card,never_arrived,nothing came,Tracking shows delivered and signed; customer says the signature isn't hers.,7,no,approved,S. Kwan,chargeback filed 2026-07-22,2026-06-21 12:53,2
+RF-2051,2026-06-21,CU-2075,51,0,35,apparel,card,changed_mind,"gift, they didn't like it",,13,no,approved,auto,,2026-06-21 15:53,
+RF-2053,2026-06-22,CU-2436,61,0,27,apparel,card,wrong_item,,confirmed picking error,6,no,approved,auto,,2026-06-22 08:19,
+RF-1019,2026-06-22,CU-1192,29,0,22,apparel,card,wrong_size,,,6,no,approved,auto,,2026-06-22 08:27,
+RF-1019,2026-06-22,CU-1192,29,0,22,apparel,card,wrong_size,,,6,no,approved,auto,,2026-06-22 08:27,
+RF-2049,2026-06-21,CU-2413,32,0,273,home,card,wrong_item,wrong size rug,"Warehouse confirms mis-pick, same SKU family.",5,no,approved,D. Patel,,2026-06-22 10:51,22
+RF-2052,2026-06-21,CU-1800,22,0,88,home,card,never_arrived,,"Signed for at the door, carrier photo shows the parcel on the step.",9,no,rejected,D. Patel,,2026-06-22 12:16,8
+RF-1017,2026-06-19,CU-1366,6,0,160,home,card,never_arrived,did not arrive,tracking inconclusive,10,no,partial,J. Alvarez,50 percent issued,2026-06-23 10:30,25
+RF-2055,2026-06-22,CU-2566,10,0,44,apparel,card,changed_mind,not for me after all,,21,no,approved,R. Mizrahi,,2026-06-23 10:44,4
+RF-2057,2026-06-23,CU-2537,49,0,15.36,home,card,changed_mind,bought two by mistake,,9,no,approved,auto,,2026-06-23 11:22,
+RF-1020,2026-06-23,CU-1388,4,0,71,electronics,card,changed_mind,found it cheaper elsewhere,,14,no,approved,R. Mizrahi,,2026-06-23 15:13,2.5
+RF-1018,2026-06-20,CU-1044,9,2,120,electronics,card,arrived_damaged,not working,no photo,3,no,approved,J. Alvarez,,2026-06-24 11:33,2
+RF-2054,2026-06-22,CU-2224,13,0,135,electronics,paypal,wrong_item,they sent the older model,matches order line - customer ordered this model,8,no,rejected,D. Patel,,2026-06-24 11:39,25
+RF-2056,2026-06-23,CU-1814,30,0,42,apparel,card,changed_mind,not for me after all,,20,no,rejected,S. Kwan,outside 14 day window,2026-06-24 11:39,1
+RF-2050,2026-06-21,CU-2840,28,0,270,electronics,card,arrived_damaged,screen won't turn on out of the box,"Photos clear - crack runs from the corner, box crushed on the same side.",,no,approved,R. Mizrahi,,2026-06-24 15:04,18
+RF-2058,2026-06-24,CU-1730,52,0,18,apparel,card,wrong_size,runs small,,5,no,approved,auto,,2026-06-24 19:36,
+RF-1022,2026-06-25,CU-1017,52,0,39,apparel,card,arrived_damaged,stain on fabric,,4,no,approved,auto,,2026-06-25 09:18,
+RF-1021,2026-06-24,CU-1456,13,0,58,home,card,arrived_damaged,dented box,contents fine per photos,2,no,rejected,D. Patel,,2026-06-25 12:02,3
+RF-1023,2026-06-26,CU-1533,1,0,295,electronics,card,never_arrived,,"Cardholder called her bank - card was stolen, she never placed this order.",6,yes,approved,S. Kwan,fraud team confirmed,2026-06-26 12:18,9
+RF-2063,2026-06-26,CU-2780,40,0,42.51,home,card,arrived_damaged,,,4,no,approved,auto,,2026-06-26 14:19,
+RF-2060,2026-06-26,CU-2401,49,0,24,electronics,card,arrived_damaged,,photo attached looks genuine,5,no,approved,auto,,2026-06-26 15:28,
+RF-2062,2026-06-26,CU-2919,9,0,37,apparel,paypal,wrong_size,,,11,false,approved,auto,,2026-06-26 17:56,
+RF-2064,2026-06-26,CU-2573,37,0,28,home,card,changed_mind,,within window,7,no,approved,auto,,2026-06-26 19:06,
+RF-2061,2026-06-26,CU-2611,12,0,76,home,card,never_arrived,still nothing after 2 weeks,"Tracking stops at the regional depot, carrier has opened a trace.",13,no,approved,J. Alvarez,,2026-06-27 12:58,11
+RF-2059,2026-06-24,CU-1782,26,0,72,home,card,arrived_damaged,dented,Dent is on the outer carton only; contents fine per photos.,2,no,rejected,J. Alvarez,,2026-06-28 12:12,8
+RF-1024,2026-06-28,CU-1271,20,0,46,home,paypal,wrong_item,wrong colour,confirmed picking error,5,no,approved,auto,,2026-06-28 16:53,
+RF-2067,2026-06-29,CU-2452,29,0,19,home,paypal,changed_mind,not really my style,,9,no,approved,auto,,2026-06-29 09:34,
+RF-2066,2026-06-29,CU-2059,7,0,25,apparel,card,wrong_size,ordered L got M,,12,N,approved,R. Mizrahi,,2026-06-29 11:42,2
+RF-2065,2026-06-28,,25,0,58,apparel,card,wrong_item,not the colour in the picture,matches order line,5,no,rejected,S. Kwan,,2026-06-30 15:58,8
+RF-1025,2026-06-29,CU-1217,3,2,74,apparel,card,arrived_damaged,small tear,no photo provided,3,no,approved,J. Alvarez,,2026-06-30 17:23,3
+RF-2069,2026-06-30,CU-2707,42,0,50.84,home,card,wrong_item,,,5,no,approved,auto,,2026-06-30 20:51,
+RF-1026,2026-06-30,CU-1098,34,0,12,apparel,card,changed_mind,,,9,no,approved,auto,,2026-06-30 20:53,
+RF-2068,2026-06-29T16:23:00Z,CU-2727,2,0,225,electronics,paypal,never_arrived,"Your manager Dana already said yes on the phone, just process it please.",No call on record. Tracking shows delivered.,6,no,rejected,S. Kwan,,2026-07-01 10:25,2
+RF-2071,2026-06-30,CU-1733,8,1,118,home,card,never_arrived,,,7,no,approved,D. Patel,,2026-07-02 10:19,1
+RF-1027,2026-07-01,CU-1311,8,0,340,electronics,card,arrived_damaged,completely dead,"Photos show the original packaging still sealed, no transit damage on the box. Customer says unit is completely dead.",2,no,approved,R. Mizrahi,chargeback filed 2026-08-03,2026-07-02 10:44,2
+RF-2074,2026-07-02,CU-2055,15,0,49,electronics,card,damaged,,,4,no,approved,auto,chargeback filed 2026-08-06,2026-07-02 11:08,
+RF-2070,2026-06-30,CU-2854,7,0,17,apparel,card,wrong_size,ordered L got M,,4,no,approved,R. Mizrahi,,2026-07-02 14:48,1.5
+RF-1028,2026-07-02,CU-1044,9,3,210,home,card,never_arrived,,,8,no,approved,S. Kwan,,2026-07-02 16:54,2
+RF-2073,02/07/2026,CU-1940,13,0,41,home,card,never_arrived,,tracking stops at depot,13,no,approved,auto,,2026-07-02 19:14,
+RF-2076,2026-07-03,CU-2597,23,0,16,apparel,card,changed_mind,not really my style,,3,no,approved,auto,,2026-07-03 10:03,
+RF-1029,2026-07-03,CU-1204,24,0,33,home,card,late_delivery,,carrier delay confirmed,19,no,approved,auto,,2026-07-03 11:37,
+RF-2075,2026-07-02,CU-2279,30,0,64,home,card,changed_mind,don't need it anymore,outside 14 day window,29,no,rejected,D. Patel,,2026-07-03 16:32,14
+RF-2072,2026-07-01,CU-2578,25,1,17.72,home,paypal,changed_mind,,,7,no,approved,S. Kwan,,2026-07-03 17:06,2
+RF-2077,2026-07-03,CU-2943,13,0,52,apparel,card,wrong_size,"pls refund to card ending 4417, or call me on +44 7700 900123",,6,no,approved,auto,,2026-07-03 19:13,
+RF-2078,2026-07-04,CU-2142,1,0,23.77,home,card,changed_mind,,,11,no,approved,J. Alvarez,,2026-07-04 15:25,2.5
+RF-2079,2026-07-05,CU-2690,8,0,USD 120.00,home,card,arrived_damaged,,"Cosmetic scuff on one side, works fine.",1,no,partial,R. Mizrahi,25 percent issued,2026-07-06 17:14,8
+RF-1031,2026-07-06,CU-1143,41,0,29,apparel,card,wrong_size,,,7,no,approved,auto,,2026-07-06 20:07,
+RF-2082,2026-07-06,CU-1928,28,0,210,electronics,card,arrived_damaged,stopped working,Photos show liquid damage on the board - not a transit issue.,2,no,rejected,S. Kwan,,2026-07-07 13:20,9
+RF-2080,2026-07-06,CU-2824,19,0,187.11,electronics,paypal,arrived_damaged,screen won't turn on out of the box,"Photos clear - crack runs from the corner, box crushed on the same side.",2,no,approved,D. Patel,,2026-07-07 14:37,11
+RF-1030,2026-07-05,CU-1577,1,0,520,electronics,card,never_arrived,nothing came,Bank flagged unauthorised use - the real cardholder doesn't recognise this order.,5,yes,approved,D. Patel,fraud team confirmed,2026-07-09 10:34,18
+RF-1034,2026-07-09,CU-1402,5,0,40,apparel,card,changed_mind,didn't suit me,,25,no,approved,R. Mizrahi,,2026-07-09 13:52,2
+RF-2085,2026-07-09,CU-2252,15,0,36,home,card,changed_mind,bought two by mistake,,3,no,approved,auto,,2026-07-09 15:09,
+RF-2081,2026-07-06,CU-2156,2,0,30.98,home,card,late,,carrier delay confirmed,21,no,approved,R. Mizrahi,,2026-07-09 17:39,4
+RF-1033,2026-07-08,CU-1259,17,0,88,electronics,paypal,arrived_damaged,power cable missing,"3rd one this week from the same supplier batch, all missing the power cable - QA ticket #4471.",4,no,approved,J. Alvarez,,2026-07-10 16:30,3
+RF-2083,2026-07-08,CU-2706,9,0,180,home,paypal,arrived_damaged,broken,Customer admitted on chat she'd assembled it herself and it snapped.,5,no,approved,S. Kwan,chargeback filed 2026-08-14,2026-07-11 12:48,2
+RF-1032,2026-07-07,CU-1388,4,1,74,home,card,wrong_item,not as described,,6,no,approved,D. Patel,,2026-07-11 14:18,4
+RF-1035,2026-07-10,CU-1483,12,0,40,apparel,card,changed_mind,not for me,,25,no,rejected,S. Kwan,outside 14 day window,2026-07-11 14:18,2
+RF-2086,2026-07-11,CU-1966,10,0,30,apparel,card,wrong_size,too tight across the shoulders,,10,no,approved,auto,,2026-07-11 16:28,
+RF-1036,2026-07-12,CU-1066,48,0,16,home,card,arrived_damaged,,,3,no,approved,auto,,2026-07-12 19:42,
+RF-2084,2026-07-09,CU-2955,27,0,192.1,home,card,arrived_damaged,two of the six glasses broken,"photos clear, partial breakage",4,no,approved,R. Mizrahi,,2026-07-13 17:16,14
+RF-1037,2026-07-13,CU-1602,1,0,275,electronics,card,never_arrived,,card reported stolen,4,yes,approved,S. Kwan,fraud team confirmed,2026-07-15 11:36,14
+RF-2087,2026-07-14,CU-1815,4,0,273,home,card,arrived_damaged,two of the six glasses broken,"photos clear, partial breakage",1,no,approved,J. Alvarez,,2026-07-15 12:49,6
+RF-2090,2026-07-15,CU-2501,3,0,110,electronics,paypal,arrived_damaged,"speaker rattles, cone is torn",photos clear,2,no,rejected,S. Kwan,"customer appealed - overturned, refunded in full; customer closed account",2026-07-15 13:33,2
+RF-2091,2026-07-16T09:38:00Z,CU-2563,18,0,16,apparel,paypal,changed_mind,"gift, they didn't like it",,7,no,approved,auto,,2026-07-16 09:25,
+RF-2089,2026-07-15,CU-2332,4,0,33,apparel,card,wrong_size,,,12,no,approved,S. Kwan,,2026-07-16 11:38,3
+RF-1038,2026-07-14,CU-1327,19,0,62,home,card,never_arrived,left with neighbour who moved,,11,no,approved,J. Alvarez,,2026-07-16 12:14,2.5
+RF-1039,2026-07-15,CU-1044,9,4,340,electronics,card,arrived_damaged,broken again,"Fourth claim from this customer this quarter, every one 'broken on arrival'.",2,no,approved,D. Patel,,2026-07-16 12:14,2
+RF-1040,2026-07-16,CU-1155,36,0,21,apparel,card,wrong_size,,,5,no,approved,auto,,2026-07-16 19:50,
+RF-2095,2026-07-17,CU-2498,39,0,25,electronics,paypal,arrived_damaged,,photo attached looks genuine,1,no,approved,auto,,2026-07-17 09:16,
+RF-2093,2026-07-17,CU-2684,14,0,22,home,card,changed_mind,"gift, they didn't like it",,9,no,approved,auto,,2026-07-17 13:05,
+RF-2092,2026-07-16,CU-2473,21,0,202,home,card,never_arrived,still nothing after 2 weeks,"Tracking stops at the regional depot, carrier has opened a trace.",14,no,approved,D. Patel,,2026-07-18 11:04,18
+RF-2094,2026-07-17,CU-2345,2,0,260,electronics,paypal,never_arrived,,"New account, delivery address is a freight forwarder; billing is a different country.",4,yes,rejected,R. Mizrahi,,2026-07-18 13:04,14
+RF-1041,2026-07-17,CU-1518,2,0,135,electronics,card,wrong_item,sent the older model,matches order line,6,no,rejected,R. Mizrahi,,2026-07-18 14:59,25
+RF-2088,2026-07-15,CU-1902,33,1,30,home,card,arrived_damaged,plate cracked,photos clear,1,no,approved,R. Mizrahi,,2026-07-18 16:32,2
+RF-2099,2026-07-19,CU-2231,55,0,USD 24.06,apparel,card,never_arrived,,tracking stops at depot,12,no,approved,auto,,2026-07-19 09:33,
+RF-1042,2026-07-19,CU-1230,26,0,54,home,paypal,late_delivery,,carrier delay confirmed,22,no,approved,auto,,2026-07-19 09:56,
+RF-2096,2026-07-18,CU-1969,37,0,166,electronics,paypal,never_arrived,,tracking inconclusive - last scan 10 days ago,13,no,approved,R. Mizrahi,,2026-07-20 10:37,11
+RF-2098,2026-07-19,CU-2496,20,0,132.14,electronics,card,wrong_item,"sent the 128GB, I paid for 256GB",confirmed picking error,7,no,approved,J. Alvarez,,2026-07-20 12:15,6
+RF-2097,2026-07-19,CU-1994,11,0,136,electronics,paypal,late_delivery,"needed it for a trip, came after",carrier delay confirmed,19,no,approved,R. Mizrahi,,2026-07-20 16:03,18
+RF-2102,2026-07-21,CU-2567,52,0,18,apparel,paypal,wrong_size,too tight across the shoulders,,3,no,approved,auto,,2026-07-21 09:12,
+RF-2101,2026-07-21,CU-2101,12,0,25,apparel,card,changed_mind,not really my style,,11,no,approved,auto,,2026-07-21 09:25,
+RF-1044,2026-07-21,CU-1181,30,0,37,apparel,card,arrived_damaged,button missing,,4,no,approved,auto,,2026-07-21 15:10,
+RF-2100,2026-07-20,CU-1771,8,0,42,home,card,arrived_damaged,plate cracked,photos clear,4,no,approved,S. Kwan,,2026-07-21 15:15,3
+RF-2109,2026-07-22,CU-2000,10,0,42,electronics,card,late,took 3 weeks,carrier delay confirmed,22,no,approved,auto,,2026-07-22 08:21,
+RF-2107,2026-07-22,CU-2723,21,0,30,home,card,arrived_damaged,mug chipped on the rim,photos clear,1,no,approved,auto,,2026-07-22 11:08,
+RF-2103,2026-07-21,CU-2110,6,0,45.07,apparel,card,changed_mind,colour looks different in person,,7,no,approved,D. Patel,,2026-07-22 15:41,1.5
+RF-2106,2026-07-22,CU-2204,54,0,10,apparel,card,wrong_size,need a size up,,8,no,approved,auto,,2026-07-22 17:52,
+RF-1046,2026-07-23,CU-1372,9,0,26,apparel,card,changed_mind,,,8,no,approved,auto,,2026-07-23 10:42,
+RF-2110,2026-07-23,CU-2354,34,1,32.34,apparel,card,wrong_size,,,12,no,approved,J. Alvarez,,2026-07-24 12:06,4
+RF-2105,2026-07-22,CU-2215,14,0,61,apparel,card,changed_mind,didn't suit me,,27,no,approved,R. Mizrahi,,2026-07-24 12:33,2
+RF-1045,2026-07-22,CU-1294,15,0,190,home,card,never_arrived,no delivery,"Spoke to her at 14:20 - she said it did turn up at the back door on Tuesday, but she wants the money back for the hassle since it was late. Told her I'd pass it on.",9,no,approved,S. Kwan,chargeback filed 2026-08-19,2026-07-24 14:38,3
+RF-1043,2026-07-20,CU-1649,1,0,445,electronics,card,never_arrived,,Cardholder disputes the charge - says the card went missing last week and this wasn't their purchase.,3,yes,approved,J. Alvarez,fraud team confirmed,2026-07-24 15:23,25
+RF-2104,2026-07-21,CU-1733,9,2,92,electronics,paypal,arrived_damaged,,no photo,4,no,approved,S. Kwan,,2026-07-25 11:43,1
+RF-2108,2026-07-22,CU-1890,18,0,160,home,card,never_arrived,,tracking inconclusive,10,no,partial,S. Kwan,50 percent issued,2026-07-25 15:19,25
+RF-2114,2026-07-25,CU-1728,60,0,43.47,electronics,card,wrong_item,,,3,no,approved,auto,,2026-07-25 18:34,
+RF-2112,2026-07-24,CU-2157,20,0,38,apparel,paypal,changed_mind,not for me after all,,19,no,rejected,S. Kwan,outside 14 day window,2026-07-26 09:25,1.5
+RF-2115,2026-07-26,CU-2740,39,0,14,apparel,paypal,wrong_size,too tight across the shoulders,,11,no,approved,auto,,2026-07-26 12:08,
+RF-1047,2026-07-24,CU-1445,21,0,310,electronics,card,arrived_damaged,screen shattered,"Outer box pristine, foam insert intact, screen shattered from the inside? Doesn't add up - possibly damaged after delivery.",2,no,approved,D. Patel,,2026-07-26 15:42,6
+RF-1048,2026-07-26,CU-1027,44,0,19,home,card,wrong_item,,confirmed picking error,6,no,approved,auto,,2026-07-26 17:38,
+RF-2117,2026-07-27,CU-2111,31,0,22,home,card,never_arrived,,tracking stops at depot,11,no,approved,auto,,2026-07-27 10:07,
+RF-2113,2026-07-25,CU-2784,3,0,43,home,card,late_delivery,,carrier delay confirmed,19,no,approved,S. Kwan,,2026-07-27 13:19,3
+RF-2119,2026-07-27,CU-2289,41,0,48,apparel,card,changed_mind,,,6,no,approved,auto,,2026-07-27 15:06,
+RF-2116,2026-07-26,CU-2419,8,0,162,home,card,wrong_item,wrong size rug,"Warehouse confirms mis-pick, same SKU family.",7,no,approved,D. Patel,,2026-07-27 16:18,14
+RF-2111,2026-07-24,CU-2179,2,0,390,electronics,card,arrived_damaged,,"New account, first order; no photos despite two requests.",2,Y,approved,R. Mizrahi,chargeback filed 2026-08-28,2026-07-28 09:56,14
+RF-2111,2026-07-24,CU-2179,2,0,390,electronics,card,arrived_damaged,,"New account, first order; no photos despite two requests.",2,Y,approved,R. Mizrahi,chargeback filed 2026-08-28,2026-07-28 09:56,14
+RF-2118,2026-07-27,CU-2526,1,0,420,electronics,paypal,never_arrived,,"First order on a new account, high value, address mismatch.",7,Y,rejected,S. Kwan,,2026-07-28 10:12,6
+RF-1049,2026-07-27,CU-1560,3,0,66,apparel,card,never_arrived,,Carrier has a signature on file and a photo of the parcel at the front door.,7,no,rejected,R. Mizrahi,,2026-07-28 10:24,25
+RF-2120,2026-07-28,CU-2605,53,0,45.93,apparel,card,wrong_size,too tight across the shoulders,,4,no,approved,auto,,2026-07-28 15:35,
+RF-2121,2026-07-28,CU-2488,23,0,51.26,home,card,arrived_damaged,,,6,no,approved,auto,,2026-07-28 17:28,
+RF-2122,2026-07-28T22:51:00Z,CU-2029,29,0,36,home,card,changed_mind,,within window,14,no,approved,auto,,2026-07-28 20:08,
+RF-1051,2026-07-29,CU-1119,33,0,44,home,paypal,arrived_damaged,,photos clear,3,no,approved,auto,,2026-07-29 09:33,
+RF-2126,2026-07-29,CU-2858,43,0,32.57,apparel,card,wrong_size,,,7,no,approved,auto,,2026-07-29 12:19,
+RF-2124,2026-07-29,CU-1945,24,0,46,apparel,card,arrived_damaged,"honestly it's fine, just not the colour I expected",,6,no,approved,auto,,2026-07-29 13:42,
+RF-2123,2026-07-29,CU-2817,52,0,23,home,paypal,never_arrived,,tracking stops at depot,13,no,approved,auto,,2026-07-29 17:51,
+RF-2127,2026-07-29,CU-2282,20,0,12.15,home,card,wrong_item,,,6,no,approved,auto,,2026-07-29 18:56,
+RF-1050,2026-07-28,CU-1208,23,0,99,electronics,card,late_delivery,missed the event it was for,carrier delay confirmed,18,no,partial,J. Alvarez,shipping refunded only,2026-07-30 09:04,18
+RF-2132,2026-07-31,CU-2750,34,0,43,home,card,changed_mind,,within window,6,no,approved,auto,,2026-07-31 10:05,
+RF-1052,2026-07-30,CU-1676,1,0,380,electronics,card,never_arrived,,Unauthorised transaction per the cardholder - card reported stolen to the bank.,5,yes,approved,S. Kwan,fraud team confirmed,2026-07-31 14:09,25
+RF-2125,2026-07-29,CU-2307,43,0,281,home,card,arrived_damaged,two of the six glasses broken,"photos clear, partial breakage",5,no,approved,R. Mizrahi,,2026-07-31 15:17,6
+RF-2130,2026-07-30,CU-1709,40,0,119,electronics,paypal,wrong_item,"sent the 128GB, I paid for 256GB",confirmed picking error,8,no,approved,S. Kwan,,2026-07-31 15:48,9
+RF-2133,2026-08-01,CU-2708,24,0,44,home,paypal,arrived_damaged,mug chipped on the rim,photos clear,2,no,approved,auto,,2026-08-01 09:56,
+RF-2129,2026-07-30,CU-2804,1,0,230,home,card,never_arrived,,Real cardholder phoned in: 'I've never shopped with you'. Card cancelled.,3,yes,approved,S. Kwan,fraud team confirmed,2026-08-01 13:19,6
+RF-2128,2026-07-30,CU-2171,37,0,242,home,card,wrong_item,wrong size rug,"Warehouse confirms mis-pick, same SKU family.",6,no,approved,R. Mizrahi,,2026-08-01 17:50,18
+RF-1053,2026-08-02,CU-1263,18,0,31,apparel,card,wrong_size,,,9,no,approved,auto,,2026-08-02 08:24,
+RF-2135,2026-08-02,CU-2891,40,0,25,home,card,late_delivery,took 3 weeks,carrier delay confirmed,21,no,approved,auto,,2026-08-02 14:18,
+RF-2134,2026-08-02,CU-1896,26,0,19.25,apparel,card,wrong_size,,,7,,approved,auto,,2026-08-02 14:33,
+RF-2139,2026-08-03,CU-2439,26,0,33,apparel,card,wrong_size,,,-2,no,approved,auto,,2026-08-03 08:53,
+RF-1054,2026-08-03,CU-1531,7,0,230,home,card,arrived_damaged,table leg cracked,photo attached looks genuine,4,no,approved,R. Mizrahi,,2026-08-03 14:46,6
+RF-2131,2026-07-30,CU-2812,1,0,345,electronics,card,never_arrived,,Bank confirms unauthorised use of the card - the real owner didn't buy this.,5,yes,approved,S. Kwan,fraud team confirmed,2026-08-03 16:04,6
+RF-2137,03/08/2026,CU-2412,38,0,23.69,home,paypal,changed_mind,bought two by mistake,,9,no,approved,auto,,2026-08-03 17:11,
+RF-2143,2026-08-04,CU-1877,6,0,74,home,card,wrong_item,"ordered the oak finish, got walnut",,5,no,rejected,D. Patel,customer escalated - warehouse confirmed mis-pick; refunded on appeal,2026-08-04 09:45,2
+RF-2141,2026-08-04,CU-2470,32,0,23,home,card,arrived_damaged,zip broken out of the bag,,1,no,approved,auto,,2026-08-04 12:57,
+RF-2136,2026-08-02,CU-1838,11,0,62,electronics,card,late_delivery,,carrier delay confirmed,21,no,approved,D. Patel,,2026-08-04 13:20,3
+RF-1055,2026-08-04,CU-1086,39,0,23,home,card,changed_mind,,,12,no,approved,auto,,2026-08-04 17:51,
+RF-2150,2026-08-05,CU-1884,10,0,16,electronics,card,wrong_item,,,7,no,approved,auto,,2026-08-05 14:52,
+RF-2147,2026-08-05,CU-2356,40,0,32,apparel,paypal,arrived_damaged,,,4,no,approved,auto,,2026-08-05 15:42,
+RF-2148,2026-08-05,CU-2613,30,0,$43,apparel,card,wrong_size,too tight across the shoulders,,4,no,approved,auto,,2026-08-05 16:02,
+RF-2140,2026-08-03,CU-2487,4,0,82,apparel,card,wrong_size,"La talla es muy pequeña, necesito devolverla",,5,no,approved,J. Alvarez,,2026-08-05 17:22,4
+RF-2149,2026-08-05,CU-2729,54,0,16,apparel,card,wrong_size,runs small,,9,no,approved,auto,,2026-08-05 20:32,
+RF-1057,2026-08-06,CU-1348,25,0,48,apparel,card,arrived_damaged,,,6,no,approved,auto,,2026-08-06 11:48,
+RF-2142,2026-08-04,CU-2814,3,0,38,home,card,wrong_item,,confirmed picking error,7,no,approved,D. Patel,,2026-08-06 11:59,3
+RF-2152,2026-08-06,CU-2348,17,0,33,apparel,card,arrived_damaged,,photo attached looks genuine,2,no,approved,auto,,2026-08-06 18:05,
+RF-2138,2026-08-03,CU-2821,1,0,95,home,card,never_arrived,,"cardholder disputes the purchase, card lost on holiday",4,yes,approved,S. Kwan,fraud team confirmed,2026-08-07 11:14,9
+RF-2151,2026-08-06,CU-1792,16,0,264,electronics,paypal,never_arrived,,tracking inconclusive - last scan 10 days ago,9,no,approved,R. Mizrahi,,2026-08-07 12:56,14
+RF-2146,2026-08-05,CU-2346,1,0,150,electronics,card,never_arrived,,Card was stolen per cardholder; she never placed this order.,3,yes,approved,D. Patel,fraud team confirmed,2026-08-07 13:18,12
+RF-2145,2026-08-05,CU-2058,42,0,186,electronics,paypal,late_delivery,"needed it for a trip, came after",carrier delay confirmed,22,no,approved,R. Mizrahi,,2026-08-07 14:13,18
+RF-2144,2026-08-05,CU-1975,3,0,40.35,apparel,card,changed_mind,colour looks different in person,,8,no,approved,R. Mizrahi,,2026-08-07 16:15,2
+RF-2153,2026-08-07,CU-2051,38,0,21,home,card,arrived_damaged,lid cracked,,6,no,approved,auto,,2026-08-07 16:15,
+RF-2154,2026-08-07,CU-1974,43,0,25,apparel,paypal,changed_mind,,within window,10,no,approved,auto,,2026-08-07 17:46,
+RF-1058,2026-08-07,CU-1592,2,0,112,electronics,card,never_arrived,,Account opened two days before the order; delivery address differs from billing.,8,yes,rejected,J. Alvarez,,2026-08-08 15:44,8
+RF-2155,2026-08-08,CU-2568,57,0,36,apparel,card,never_arrived,,tracking stops at depot,11,no,approved,auto,,2026-08-08 20:00,
+RF-1056,2026-08-05,CU-1419,10,0,155,electronics,card,wrong_item,got headphones not speaker,confirmed picking error,5,no,approved,D. Patel,,2026-08-09 13:34,4
+RF-2156,2026-08-09,CU-2522,40,0,15.11,apparel,paypal,wrong_size,need a size up,,7,no,approved,auto,,2026-08-09 14:58,
+RF-2157,2026-08-09,CU-2675,50,0, 20 ,apparel,card,wrong_size,runs small,,5,no,approved,auto,,2026-08-09 17:44,
+RF-1059,2026-08-09,CU-1174,28,0,35,home,paypal,late_delivery,,carrier delay confirmed,21,no,approved,auto,,2026-08-09 20:57,
+RF-2158,2026-08-10,CU-2443,6,0,31.26,home,card,wrong_item,,confirmed picking error,3,no,approved,D. Patel,,2026-08-10 09:24,1
+RF-2161,2026-08-11,CU-2574,19,0,38,home,paypal,arrived_damaged,"הגיע שבור, יש לי תמונות","photo received, legit",2,no,approved,auto,,2026-08-11 09:14,
+RF-1061,2026-08-11,CU-1039,50,0,17,apparel,card,wrong_size,,,7,no,approved,auto,,2026-08-11 14:21,
+RF-1060,2026-08-10,CU-1465,14,0,78,electronics,card,arrived_damaged,scratched casing,cosmetic only,3,no,partial,S. Kwan,30 percent issued,2026-08-11 17:55,18
+RF-2159,2026-08-11,CU-1768,36,0, 25 ,apparel,card,wrong_item,,confirmed picking error,6,no,approved,auto,,2026-08-11 18:54,
+RF-2160,2026-08-11,CU-2810,16,0,49,electronics,card,wrong_item,,,5,no,approved,auto,,2026-08-11 20:23,
+RF-2192,2026-08-11,CU-3004,22,0,64,home,card,never_arrived,still says 'arrived at hub' a week later,Stuck at Northfield hub - last scan 6 days ago.,9,no,approved,J. Alvarez,,2026-08-12 10:41,6
+RF-2163,2026-08-12,CU-1733,10,3,156,electronics,card,never_arrived,,customer says neighbour may have taken it,10,no,approved,J. Alvarez,,2026-08-13 09:28,3
+RF-2164,2026-08-12,CU-2141,2,0,22,home,card,arrived damaged,plate cracked,photos clear,1,no,approved,R. Mizrahi,,2026-08-13 10:40,1
+RF-2166,2026-08-13,CU-2095,50,0,228,home,paypal,arrived_damaged,lamp base snapped,photo attached looks genuine,2,no,approved,J. Alvarez,,2026-08-13 11:54,14
+RF-2167,2026-08-13,CU-2531,,0,14.37,apparel,card,wrong_size,,,12,no,approved,auto,,2026-08-13 15:00,
+RF-2165,2026-08-12,CU-2680,45,0,90.56,electronics,card,wrong_item,"sent the 128GB, I paid for 256GB",confirmed picking error,5,no,approved,S. Kwan,,2026-08-13 15:37,14
+RF-2193,2026-08-13,CU-3012,14,0,38,apparel,paypal,never_arrived,,tracking stops at depot (NFD),8,no,approved,auto,,2026-08-13 16:22,
+RF-2162,2026-08-12,CU-2506,17,0,210,electronics,card,arrived_damaged,,"Scratch on the casing, cosmetic only.",3,no,partial,R. Mizrahi,30 percent issued,2026-08-13 17:04,8
+RF-2168,2026-08-13,CU-2649,3,0,140,electronics,card,arrived_damaged,"Gerät kam defekt an, Display flackert",video received - flicker visible,3,no,approved,D. Patel,,2026-08-13 17:39,1
+RF-1062,2026-08-12,CU-1283,20,0,265,home,card,never_arrived,,tracking stops at depot,13,no,approved,R. Mizrahi,,2026-08-14 11:23,11
+RF-1063,2026-08-13,CU-1507,6,0,52,apparel,card,changed_mind,wrong shade of blue,,10,no,approved,D. Patel,,2026-08-14 17:56,1.5
+RF-2169,2026-08-14,CU-2259,26,0,228,home,card,arrived_damaged,lamp base snapped,photo attached looks genuine,5,no,approved,S. Kwan,,2026-08-15 11:30,25
+RF-2170,2026-08-15,CU-1767,27,0,15,apparel,card,wrong item,,confirmed picking error,6,no,approved,auto,,2026-08-15 15:40,
+RF-2172,2026-08-16,CU-2747,29,1,$36,home,card,late_delivery,,carrier delay confirmed,17,no,approved,S. Kwan,,2026-08-16 09:14,3
+RF-2194,2026-08-15,CU-3027,31,0,145,electronics,card,late_delivery,"finally came, 12 days late",Carrier confirms a backlog at the Northfield sorting centre.,16,no,partial,S. Kwan,shipping refunded only,2026-08-16 11:05,4
+RF-2171,2026-08-16,CU-1904,62,0,11.86,home,paypal,changed_mind,,,14,no,approved,auto,,2026-08-16 13:35,
+RF-1064,2026-08-16,CU-1221,32,0,28,home,card,arrived_damaged,,,4,no,approved,auto,,2026-08-16 18:58,
+RF-2175,2026-08-16,CU-2540,11,0,67,home,card,never_arrived,"arrived broken, base cracked in two",photos clear,4,no,approved,R. Mizrahi,,2026-08-17 10:19,3
+RF-2173,2026-08-16,CU-2614,2,0,175,electronics,card,arrived_damaged,doesn't work,"Account 3 days old, card billing address doesn't match shipping.",3,yes,rejected,R. Mizrahi,,2026-08-17 11:24,25
+RF-2176,2026-08-17,CU-2126,38,0,45,electronics,card,arrived_damaged,,photo attached looks genuine,3,no,approved,auto,,2026-08-17 20:54,
+RF-2177,2026-08-17,CU-1879,2,0,49,apparel,card,wrong_size,,,10,no,approved,R. Mizrahi,,2026-08-18 09:38,2.5
+RF-1066,2026-08-18,CU-1356,22,0,43,apparel,paypal,wrong_item,,confirmed picking error,5,no,approved,auto,,2026-08-18 12:00,
+RF-2178,2026-08-18,CU-2894,19,0,30.45,electronics,card,wrong_item,,,6,no,approved,auto,,2026-08-18 13:59,
+RF-2195,2026-08-17,CU-3041,9,0,89,home,card,never_arrived,where is my order??,Last scan: Northfield DC on 08/08. Carrier not answering.,10,no,approved,R. Mizrahi,,2026-08-18 14:12,5
+RF-1065,2026-08-17,CU-1613,1,0,495,electronics,card,arrived_damaged,,"New account, no previous orders, first purchase is a $495 item. Says it arrived broken, no photos yet.",2,yes,approved,S. Kwan,chargeback filed 2026-09-05,2026-08-19 09:46,2
+RF-2174,2026-08-16,CU-2483,14,0,55.00 USD,apparel,card,wrong_size,,,3,no,approved,D. Patel,,2026-08-19 17:20,2
