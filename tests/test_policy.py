@@ -116,3 +116,24 @@ def test_unknown_wording_without_llm(tmp_path):
                               translations_path=tmp_path / "t.json", ask=None, translate_ask=None))
     r = c.post("/api/policy/translate", json={"text": "refund every Tuesday"})
     assert r.status_code == 503 and "example" in r.json()["detail"]
+
+
+def test_fact_eval_catches_a_wrong_label(tmp_path):
+    """The fact evaluation must notice a disagreement, and say when it would move a request."""
+    import json
+    from refund_desk.evaluate import evaluate_facts
+    from refund_desk.facts import FactReader
+    from refund_desk.rules import latest_policy
+
+    root = Path(__file__).resolve().parent.parent
+    labels = json.loads((root / "eval" / "labels.json").read_text())
+    reader, policy = FactReader(root / "cache" / "facts.json"), latest_policy(root / "policy")
+    assert evaluate_facts(root / "eval" / "labels.json", root / "data", policy, reader)["notes"] == 40
+
+    rf1074 = next(i for i in labels["items"] if i["request_id"] == "RF-1074")
+    rf1074["true"] = []  # a label that says the Spanish note is clean
+    wrong = tmp_path / "labels.json"
+    wrong.write_text(json.dumps(labels))
+    r = evaluate_facts(wrong, root / "data", policy, reader)
+    assert {"request_id": "RF-1074", "fact": "refund_elsewhere", "model": True, "label": False} in r["misses"]
+    assert r["route_changes"] == [{"request_id": "RF-1074", "model_route": "reviewer", "label_route": "auto_approve"}]

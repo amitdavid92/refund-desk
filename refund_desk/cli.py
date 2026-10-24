@@ -2,6 +2,7 @@
 
   refund-desk route [FILE]   route a CSV with the pending.csv columns (default: data/pending.csv)
   refund-desk evaluate       measure the live policy on history (train and holdout)
+  refund-desk eval-facts     measure the LLM's reading against hand labels (eval/labels.json), and its cost
   refund-desk extract        read every note in history and pending with the LLM, fill the cache
   refund-desk serve [FILE]   the web app on http://localhost:8000
 
@@ -12,7 +13,7 @@ import argparse
 import os
 from pathlib import Path
 
-from .evaluate import evaluate_history
+from .evaluate import cost_per_note, evaluate_facts, evaluate_history
 from .facts import FactReader, gemini_client
 from .load import load
 from .rules import latest_policy, route_batch
@@ -20,6 +21,9 @@ from .rules import latest_policy, route_batch
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / "cache" / "facts.json"
 ROUTE_LABEL = {"auto_approve": "AUTO", "reviewer": "REVIEW", "fraud_team": "FRAUD"}
+# Gemini 3.6 Flash, USD per million tokens. Sources in Oct 2026 list $1.50/$7.50 (launch) or an
+# introductory $0.75/$3.75; we use the higher one so the cost is an upper bound.
+PRICE_IN, PRICE_OUT = 1.50, 7.50
 
 
 def load_dotenv(path=ROOT / ".env"):
@@ -56,6 +60,24 @@ def cmd_evaluate(args, policy, reader):
         print(f"  bad outcomes sent to a person: {', '.join(m['bad_caught']) or 'none'}")
 
 
+def cmd_eval_facts(args, policy, reader):
+    r = evaluate_facts(args.labels, ROOT / "data", policy, reader)
+    print(f"LLM fact reading vs hand labels ({args.labels.name}): {r['notes']} notes\n")
+    print(f"  notes read fully right: {r['notes_all_right']}/{r['notes']}")
+    print(f"  precision {r['precision']:.0%} · recall {r['recall']:.0%}")
+    for name, m in r["per_fact"].items():
+        print(f"    {name:22} yes found {m['tp']}, wrong yes {m['fp']}, missed {m['fn']}")
+    for m in r["misses"]:
+        print(f"  miss: {m['request_id']} {m['fact']} model={m['model']} label={m['label']}")
+    print(f"  errors that would change a route: {r['route_changes'] or 'none'}")
+    c = cost_per_note(reader.cache)
+    usd = (c["tokens_in"] * PRICE_IN + c["tokens_out"] * PRICE_OUT) / 1e6
+    print(f"\ncost: {c['tokens_in']} tokens in + {c['tokens_out']} out per note "
+          f"(batches of 20, {', '.join(c['model'])}, {c['notes']} notes)")
+    print(f"  ≈ ${usd:.4f} per request at ${PRICE_IN}/${PRICE_OUT} per million; "
+          f"300 requests a week ≈ ${usd * 300:.2f}")
+
+
 def cmd_extract(args, policy, reader):
     if reader.ask is None:
         raise SystemExit("extract needs GEMINI_API_KEY (in the shell or in .env)")
@@ -88,6 +110,9 @@ def main(argv=None):
     e = sub.add_parser("evaluate", help="measure the policy on decided history")
     e.add_argument("--history", type=Path, default=ROOT / "data" / "history.csv")
     e.set_defaults(run=cmd_evaluate)
+    f = sub.add_parser("eval-facts", help="measure the LLM's reading against hand labels")
+    f.add_argument("--labels", type=Path, default=ROOT / "eval" / "labels.json")
+    f.set_defaults(run=cmd_eval_facts)
     x = sub.add_parser("extract", help="read all notes with the LLM and fill the cache")
     x.set_defaults(run=cmd_extract)
     s = sub.add_parser("serve", help="start the web app")
