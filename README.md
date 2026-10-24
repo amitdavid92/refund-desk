@@ -4,6 +4,9 @@ Refund requests for an online store, routed by fixed rules. An LLM reads the fre
 
 There are two mechanisms. The **reviewer** works a queue. The **Refund Operations Manager** changes a rule in plain words and sees what it would do before it goes live.
 
+- **Screen recording (5 min, narrated in Hebrew):** https://www.loom.com/share/55c201c5ec764428854e25d6fbdb78df
+- **Slides (8):** [docs/slides.pdf](docs/slides.pdf)
+
 ## Run it
 
 You need [uv](https://docs.astral.sh/uv/). Then, from this folder:
