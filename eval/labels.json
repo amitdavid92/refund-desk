@@ -1,6 +1,6 @@
 {
  "about": "Hand labels for the fact reader, reviewed and approved by Amit David on 2026-10-24. 40 notes: every pending note, plus history notes drawn with seed 20261024. Each label lists the facts that are true for that note; every other fact is false. 'ambiguous' facts are left out of the score in both directions. Labelled from the note text only, before comparing with the model.",
- "labeled_by": "Amit David",
+ "labeled_by": "Drafted with an AI coding assistant from the note text only; every label reviewed and approved by Amit David",
  "items": [
   {"request_id": "RF-1070", "source": "pending", "true": ["card_reported_stolen"]},
   {"request_id": "RF-1071", "source": "pending", "true": ["photo_provided"]},
