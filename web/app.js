@@ -7,6 +7,8 @@ const view = document.getElementById("view");
 
 // A request waiting longer than this is late. History: median 1 day, never more than 4.
 const TARGET_DAYS = 4;
+// Same minimum as MIN_REASON in refund_desk/api.py.
+const MIN_REASON = 8;
 // When to roll back (D7): any money lost on an auto-approval in a week.
 const ROLLBACK = "Roll back if an auto-approval loses money in any week.";
 
@@ -430,7 +432,7 @@ function railBlock(c) {
       <div class="fields">
         <label class="f f-amount" hidden><span>Refund amount</span><input class="num" inputmode="decimal" value="${(c.amount / 2).toFixed(2)}"><small>Less than ${money(c.amount)}</small></label>
         <label class="f f-ask" hidden><span>Ask for</span><select><option>A photo of the item</option><option>The store receipt</option><option>Confirmation of the amount</option><option>Something else</option></select></label>
-        <label class="f f-reason" hidden><span>Your reason <em>Required: this differs from the rule default</em></span><textarea rows="2" placeholder="One short sentence"></textarea></label>
+        <label class="f f-reason" hidden><span>Your reason <em>Required: this differs from the rule default</em></span><textarea rows="2" placeholder="Why not the rule default? At least ${MIN_REASON} characters"></textarea><small class="count num"></small></label>
       </div>
       <button type="button" class="btn primary confirm" disabled>Choose an action</button>
       <p class="err" hidden></p>
@@ -444,6 +446,7 @@ function wireDecision(c) {
   const conf = root.querySelector(".confirm"), err = root.querySelector(".err");
   const fAmt = root.querySelector(".f-amount"), fAsk = root.querySelector(".f-ask"), fRea = root.querySelector(".f-reason");
   const amt = fAmt.querySelector("input"), ask = fAsk.querySelector("select"), rea = fRea.querySelector("textarea");
+  const count = fRea.querySelector(".count");
   const def = c.default_action;
   let sel = null;
 
@@ -452,10 +455,13 @@ function wireDecision(c) {
     const v = parseFloat(amt.value);
     let ok = !!sel, label = "Choose an action";
     if (sel) {
-      if (against && rea.value.trim().length < 8) { ok = false; label = "Add a reason to continue"; }
+      if (against && rea.value.trim().length < MIN_REASON) { ok = false; label = "Add a reason to continue"; }
       else if (sel === "partial" && !(v > 0 && v < c.amount)) { ok = false; label = "Enter an amount"; }
       else label = { approve: `Approve ${money(c.amount)}`, reject: "Reject request", partial: `Refund ${money(v)}`, ask: "Send request to customer" }[sel];
     }
+    const n = rea.value.trim().length;
+    count.textContent = `${Math.min(n, MIN_REASON)} / ${MIN_REASON} characters`;
+    count.classList.toggle("met", n >= MIN_REASON);
     conf.disabled = !ok;
     conf.className = `btn primary confirm ${sel || ""}`;
     conf.innerHTML = (ok ? ic(sel) : "") + label;
@@ -467,6 +473,9 @@ function wireDecision(c) {
     fAsk.hidden = sel !== "ask";
     fRea.hidden = !(def && sel !== def);
     check();
+    // Put the cursor where the next thing is needed: the amount for a partial, else the reason.
+    if (sel === "partial") amt.focus();
+    else if (!fRea.hidden) rea.focus();
   });
   rea.oninput = check;
   amt.oninput = check;
